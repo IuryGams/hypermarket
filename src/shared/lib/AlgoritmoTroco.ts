@@ -24,13 +24,13 @@ export default function AlgoritmoNotas(troco: number) {
         };
 
         // Verificando se o número Decimal for maior que o valor da interação e menor do que 1.
-        if (numDecimal >= coin && numDecimal < 1) { 
+        if (numDecimal >= coin) { 
             
             // Dividindo o número decimal pelo valor da interação, transformando-o em um número inteiro com o metodo Math.Trunc() e salvando o quociente na constante.
-            const qtyCoin = Math.trunc(numDecimal / coin); 
+            const qtyCoin = Math.trunc(numDecimal / coin);
             
             // Atribuindo o restante da divisão a o número Decimal.
-            numDecimal %= coin; 
+           numDecimal %= coin
 
             // Adicionando a instrução a lista.
             const coinToInt = Math.round(coin * 100);

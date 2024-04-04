@@ -13,6 +13,6 @@ export const Spin = styled.div`
     border: 6px solid #e5e5e5;
     border-top-color: #51d4db;
     border-radius: 50%;
-    animation: ${rotate} 1s infinite;
+    animation: ${rotate} 1s linear infinite;
 `
 
