@@ -33,6 +33,7 @@ export const TopBar = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             width: 50px;
             height: 50px;
             border-radius: 100%;
@@ -54,4 +55,19 @@ export const TopBar = styled.div`
             }
         }
     }
+`
+
+export const EffectCart = styled.span`
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 3px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    font-weight: bold;
 `
