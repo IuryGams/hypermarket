@@ -14,7 +14,7 @@ export default function registryProduct({name, price, quantity}: ProductProps) {
     // O produto será adicionado ao "banco de dados".
     MarketProductList.push({
         name: name.toLowerCase().trim(),
-        price: CalculateTaxation(price),
+        price: price,
         quantity: quantity
     })
 

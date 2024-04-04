@@ -4,10 +4,12 @@ import { SiGooglesheets } from "react-icons/si";
 import { useCartContext } from "@/shared/contexts/cartContext";
 import { AsideContainer, BoxIcon, FlexBoxBetween, FullPrice } from "./styled";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import CalculateTaxation from "@/shared/utils/calculateImpost";
 
 export default function Summary() {
 
     const { fullPrice } = useCartContext();
+    const tax = CalculateTaxation(fullPrice)
 
     return (
         <AsideContainer>
@@ -27,7 +29,7 @@ export default function Summary() {
                 </FlexBoxBetween>
                 <FlexBoxBetween>
                     <span>Impostos</span>
-                    <b></b>
+                    <b>{FormatCoin(tax, "BRL")}</b>
                 </FlexBoxBetween>
                 <FlexBoxBetween style={{ cursor: "pointer" }}>
                     <b style={{ color: "var(--green-text)" }}>Adicionar cupom</b>
@@ -37,7 +39,7 @@ export default function Summary() {
                 <HorizontalDash />
                 <FlexBoxBetween style={{paddingBlock: "0.25em"}}>
                     <span style={{fontWeight: "bold", fontSize: "20px"}}>Total</span>
-                    <b style={{fontSize: "24px"}}>{FormatCoin(fullPrice, "BRL")}</b>
+                    <b style={{fontSize: "24px"}}>{FormatCoin(fullPrice + tax, "BRL")}</b>
                 </FlexBoxBetween>
         </AsideContainer>
     )

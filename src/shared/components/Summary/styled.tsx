@@ -9,6 +9,7 @@ export const AsideContainer = styled.aside`
     box-shadow: rgba(40, 41, 61, 0.08) 0px 0px 1px, rgba(96, 97, 112, 0.16) 0px 0.5px 2px;
     width: 25%;
     min-height: 255px;
+    max-height: 265px;
     padding: 1em;
 `
 
