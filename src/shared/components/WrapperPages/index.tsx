@@ -1,10 +1,12 @@
+import { CSSProperties } from "styled-components";
 import { ContainerMain } from "./styled";
 
-export default function WrapperPage({children}: {
+export default function WrapperPage({children, styles}: {
     children: React.ReactNode;
+    styles?: CSSProperties;
 }) {
     return (
-        <ContainerMain>
+        <ContainerMain style={styles}>
             {children}
         </ContainerMain>
     )

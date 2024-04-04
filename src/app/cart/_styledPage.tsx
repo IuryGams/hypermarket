@@ -17,8 +17,9 @@ export const ContentProducts = styled.article`
     background-color: white;
     box-shadow: rgba(40, 41, 61, 0.08) 0px 0px 1px, rgba(96, 97, 112, 0.16) 0px 0.5px 2px;
     height: fit-content;
-    width: 80%;
+    width: 75%;
     padding: 1em;
+    min-height: 255px;
 `
 
 export const BoxProducts = styled.div`

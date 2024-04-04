@@ -2,25 +2,43 @@ import FormatCoin from "@/shared/utils/FormatCoin";
 import HorizontalDash from "../HorizontalDash";
 import { SiGooglesheets } from "react-icons/si";
 import { useCartContext } from "@/shared/contexts/cartContext";
-import { AsideContainer, BoxIcon, FullPrice } from "./styled";
+import { AsideContainer, BoxIcon, FlexBoxBetween, FullPrice } from "./styled";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 export default function Summary() {
 
-    const {fullPrice} = useCartContext();
+    const { fullPrice } = useCartContext();
 
     return (
         <AsideContainer>
-            <div>
+            
                 <BoxIcon >
                     <SiGooglesheets size={20} style={{ fill: "var(--primary-color)" }} />
-                    <h2>Resumo</h2>
+                    <h2>Resumo da compra</h2>
                 </BoxIcon>
-                <FullPrice >
-                    <span>Valor dos produtos:</span>
+
+                <FlexBoxBetween>
+                    <span>Sub-Total</span>
                     <b>{FormatCoin(fullPrice, "BRL")}</b>
-                </FullPrice>
+                </FlexBoxBetween>
+                <FlexBoxBetween>
+                    <span>Frete</span>
+                    <b>Gratuito</b>
+                </FlexBoxBetween>
+                <FlexBoxBetween>
+                    <span>Impostos</span>
+                    <b></b>
+                </FlexBoxBetween>
+                <FlexBoxBetween style={{ cursor: "pointer" }}>
+                    <b style={{ color: "var(--green-text)" }}>Adicionar cupom</b>
+                    <FaArrowAltCircleRight style={{ color: "var(--green-text)" }} />
+                </FlexBoxBetween>
+
                 <HorizontalDash />
-            </div>
+                <FlexBoxBetween style={{paddingBlock: "0.25em"}}>
+                    <span style={{fontWeight: "bold", fontSize: "20px"}}>Total</span>
+                    <b style={{fontSize: "24px"}}>{FormatCoin(fullPrice, "BRL")}</b>
+                </FlexBoxBetween>
         </AsideContainer>
     )
 }

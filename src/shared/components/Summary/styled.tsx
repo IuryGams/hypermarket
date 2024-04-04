@@ -7,8 +7,8 @@ export const AsideContainer = styled.aside`
     border-radius: 2px;
     background-color: white;
     box-shadow: rgba(40, 41, 61, 0.08) 0px 0px 1px, rgba(96, 97, 112, 0.16) 0px 0.5px 2px;
-    width: 20%;
-    height: 500px;
+    width: 25%;
+    min-height: 255px;
     padding: 1em;
 `
 
@@ -17,6 +17,22 @@ export const BoxIcon = styled.div`
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
+
+    h2{
+        font-size: 16px;
+    }
+`
+
+export const FlexBoxBetween = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-block: 1em;
+
+    span{
+        white-space: nowrap;
+    }
 `
 
 export const FullPrice = styled.div`

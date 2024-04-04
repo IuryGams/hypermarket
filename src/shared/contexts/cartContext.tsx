@@ -33,7 +33,7 @@ export default function CartProvider({children}: {
 export function useCartContext() {
     const { products, setProducts } = useContext(CartContext);
 
-    const [cash, setCash] = useState<string>();
+    const [cash, setCash] = useState<number>(0);
     const fullPrice = CalculateTotalPrice(products);
 
     function addProductToCart(newProduct: ProductProps) {
@@ -88,7 +88,7 @@ export function useCartContext() {
     }
 
     function Cashier(){
-        const Notas: string[] = AlgoritmoNotas(Number(cash) - fullPrice);
+        const Notas: string[] = AlgoritmoNotas(cash - fullPrice);
         if(Notas.length > 0){
             return Notas;
         }
