@@ -1,10 +1,16 @@
-import styles from "./page.module.css";
+import CardProduct from "@/shared/components/CardProduct";
+import MarketProductList from "@/shared/lib/MarketProductList";
+import WrapperPage from "@/shared/components/WrapperPages";
+import { GridCollection } from "./_styledPage";
 
 export default function Home() {
+  const Products = MarketProductList;
 
   return (
-    <main className={styles.main}>
-      
-    </main>
+    <WrapperPage>
+      <GridCollection>
+        {Products.map(product => <CardProduct key={product.name} {...product}  />)}
+      </GridCollection>
+    </WrapperPage>
   );
 }
